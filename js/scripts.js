@@ -24,7 +24,8 @@ var nameDictionary = {
   'w': 'mei',
   'x': 'na',
   'y': 'fu',
-  'z': 'zi'
+  'z': 'zi',
+  ' ': ' '
 }
 
 new Vue({
@@ -35,7 +36,7 @@ new Vue({
   },
   methods: {
     ninjafy: function () {
-      this.ninjaName = this.name.split('').map(function(i){ return nameDictionary[i] || '' }).join('')
+      this.ninjaName = this.name.split('').map(function(i){ return nameDictionary[i.toLowerCase()] || '' }).join('')
     }
   }
 })

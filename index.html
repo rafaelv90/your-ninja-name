@@ -9,27 +9,55 @@
   <meta name="author" content="Rafael Valério">
 
   <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
 
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 </head>
 
-<body>
-  <div id="app">
+<body id="app" v-cloak>
+  <div class="container">
     <div class="title">
+      <div class="logo">
+        <svg version="1.1"
+        	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+        	 x="0px" y="0px" width="100px" height="100px" viewBox="0 0 190 190" style="enable-background:new 0 0 190 190;"
+        	 xml:space="preserve">
+        <style type="text/css">
+        	.st0{fill:#1EAF59;}
+        	.st1{fill:none;stroke:#1EAF59;stroke-width:6;stroke-miterlimit:10;}
+        </style>
+        <defs>
+        </defs>
+        <g>
+        	<path class="st0" d="M142.2,130.3L137.5,81h-0.2c0-21-18.9-38.7-42.3-38.7S52.7,60,52.7,81h-0.2l-4.7,49.3c0,0.3-0.1,0.4-0.1,0.8
+        		c0,9.4,21.2,16.8,47.3,16.8s47.3-7.4,47.3-16.8C142.3,130.8,142.2,130.6,142.2,130.3z M126.7,84.7
+        		C126.7,84.7,126.7,84.7,126.7,84.7c-1.4,5.5-7,8.9-12.7,8c-12.6-1.9-25.4-1.9-38,0c-5.6,0.8-11.2-2.5-12.7-8c0,0,0,0,0,0
+        		c-1.4-5.5,2.8-11.4,9.5-12.4c14.7-2.3,29.6-2.3,44.3,0C123.9,73.3,128.1,79.2,126.7,84.7z"/>
+        	<circle class="st0" cx="76.5" cy="83.2" r="5.8"/>
+        	<circle class="st0" cx="113.5" cy="83.2" r="5.8"/>
+        </g>
+        <path class="st1" d="M95,187L95,187c-50.8,0-92-41.2-92-92v0C3,44.2,44.2,3,95,3h0c50.8,0,92,41.2,92,92v0
+        	C187,145.8,145.8,187,95,187z"/>
+        </svg>
+
+      </div>
       <h1>Your Ninja Name</h1>
     </div>
 
-    {{ ninjaName }}
-    <div class="content">
-      <input type="text" v-model="name"/>
-      <button v-on:click="ninjafy">CREATE NAME</button>
+    <div class="ninja-name">
+      <span>{{ ninjaName | capitalize }}</span>
+    </div>
+
+    <div class="form">
+      <input type="text" v-model="name" v-on:keyup="ninjafy" autofocus/>
     </div>
 
     <div class="footer">
-      <p>Developed by @rafaelvalerio</p>
-      <p>Based on 9GAG post</p>
+      <p>Developed by <a href="https://twitter.com/rafaelvalerio">@rafaelvalerio</a> with <a href="https://vuejs.org">Vue.js</a>.</p>
+      <p>Source code available on <a href="https://github.com/rafaelv90/your-ninja-name">Github</a>.</p>
+      <p>Based on this <a href="http://9gag.com/gag/aydzRqb">9GAG post</a>.</p>
       <p>Enjoy!</p>
     </div>
   </div>
